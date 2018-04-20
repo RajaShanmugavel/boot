@@ -1,4 +1,4 @@
-package com.abc.raja;
+package com.abc.raja.config;
 
 import java.util.Arrays;
 
