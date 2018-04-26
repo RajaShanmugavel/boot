@@ -1,13 +1,14 @@
-package com.abc.raja.config;
+package com.abc.raja;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyBootApplication {
+public class MyApplication {
 
 	public static void main(String args[]) {
-		SpringApplication.run(MyBootApplication.class, args);
+		SpringApplication.run(MyApplication.class, args);
 	}
 
 }
