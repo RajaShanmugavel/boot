@@ -3,11 +3,13 @@ package com.abc.raja.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.abc.raja.bean.Employee;
 
+//@CrossOrigin // TODO Do the CrossOrigin with the Spring Security Configuration later....
 @RestController
 public class BaseController {
 
