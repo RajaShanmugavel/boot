@@ -25,10 +25,10 @@ public class MyApplication {
 @Configuration
 @Order(SecurityProperties.BASIC_AUTH_ORDER)
 class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	
+
 	@Autowired
 	private MyCorsFilter myCorsFilter;
-	
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("user").password("password").roles("USER").and().withUser("admin")
@@ -37,8 +37,14 @@ class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.httpBasic().and().authorizeRequests().antMatchers("/index.html", "/", "/home", "/login").permitAll()
-				.anyRequest().authenticated();
+		http.authorizeRequests()
+		.antMatchers("/").permitAll();
+		/*.anyRequest().authenticated()
+		.and()
+		.formLogin()
+		.and()
+		.logout().permitAll();*/
+		
 		http.csrf().disable();
 		http.addFilterBefore(myCorsFilter, ChannelProcessingFilter.class);
 	}
