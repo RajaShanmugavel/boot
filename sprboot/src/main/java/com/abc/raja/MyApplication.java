@@ -38,7 +38,18 @@ class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/").permitAll();
+		.antMatchers("/login", "/").permitAll()
+		.anyRequest()
+		.authenticated()
+		.and()
+		.formLogin()
+		.loginPage("http://localhost:4200/login")
+		.defaultSuccessUrl("http://localhost:4200/show-time")
+        .failureUrl("/login.html?error=true")
+        .and()
+        .logout().logoutSuccessUrl("/login.html");
+		
+		
 		/*.anyRequest().authenticated()
 		.and()
 		.formLogin()
