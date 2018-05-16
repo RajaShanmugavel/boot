@@ -19,6 +19,7 @@ public class BaseController {
 
 	@GetMapping("/get-employees")
 	public List<Employee> getEmployees() {
+		loadEmployees();
 		return list;
 	}
 
@@ -41,6 +42,10 @@ public class BaseController {
 	@PostMapping("/login")
 	public User loginUser(User user) {
 		return user;
+	}
+	
+	private void loadEmployees() {
+		list.add(new Employee("Raja", 1001, 3000.8f));
 	}
 
 }
