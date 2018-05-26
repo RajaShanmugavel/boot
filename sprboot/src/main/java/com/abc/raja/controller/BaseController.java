@@ -19,12 +19,13 @@ public class BaseController {
 
 	@GetMapping("/get-employees")
 	public List<Employee> getEmployees() {
-		loadEmployees();
+//		loadEmployees();
 		return list;
 	}
 
 	@PostMapping("/add-employee")
 	public Integer addEmployee(@RequestBody Employee employee) {
+		System.out.println("Employee input:"+employee);
 		list.add(employee);
 		return list.size();
 	}
