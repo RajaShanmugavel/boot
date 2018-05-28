@@ -27,26 +27,22 @@ public class MyApplication {
 @Order(SecurityProperties.BASIC_AUTH_ORDER)
 class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-//	@Autowired
-//	private MyCorsFilter myCorsFilter;
+	// @Autowired
+	// private MyCorsFilter myCorsFilter;
 
-/*	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("user").password("password").roles("USER").and().withUser("admin")
-				.password("password").roles("USER", "ADMIN");
-	}*/
-	
+	/*
+	 * @Autowired public void configureGlobal(AuthenticationManagerBuilder auth)
+	 * throws Exception {
+	 * auth.inMemoryAuthentication().withUser("user").password("password").roles(
+	 * "USER").and().withUser("admin") .password("password").roles("USER", "ADMIN");
+	 * }
+	 */
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		.antMatchers("/*").permitAll()
-		.anyRequest().fullyAuthenticated().and()
-		.logout()
-		.permitAll()
-		.and()
-		.httpBasic().and()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED).and()
-		.csrf().disable();
+		http.authorizeRequests().antMatchers("/*").permitAll().anyRequest().fullyAuthenticated().and().logout()
+				.permitAll().and().httpBasic().and().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED).and().csrf().disable();
 	}
 }
 
