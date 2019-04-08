@@ -64,5 +64,4 @@ public class MyApplication {
         return properties;
     }
 
-
 }
