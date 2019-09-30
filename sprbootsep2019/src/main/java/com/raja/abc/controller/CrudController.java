@@ -10,4 +10,6 @@ public class CrudController {
     public String hello() {
         return "Hello boot";
     }
+
+
 }
