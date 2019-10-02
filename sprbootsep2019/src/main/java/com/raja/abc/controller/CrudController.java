@@ -6,12 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/abc")
 public class CrudController {
 
     @Autowired
     UserRepo userRepo;
 
-    @RequestMapping("/")
+    @RequestMapping("/test")
     public String hello() {
         userRepo.findAll().forEach(s->{
             System.out.println(s.getFirstName());

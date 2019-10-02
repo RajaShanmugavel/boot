@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EnableJpaRepositories(basePackages = "com.raja.abc.data.repository")
-@SpringBootApplication(scanBasePackages= "com.raja.abc.data.dao")
+@SpringBootApplication
 public class MyBoot {
 
     public static void main(String args[]) {
