@@ -9,5 +9,10 @@ import java.util.List;
 @Repository
 public interface UserRepo extends CrudRepository<User, Long> {
 
+    /**
+     *
+     * @param lastName
+     * @return
+     */
     List<User> findByLastName(String lastName);
 }
