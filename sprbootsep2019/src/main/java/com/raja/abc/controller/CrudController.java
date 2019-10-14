@@ -14,7 +14,7 @@ public class CrudController {
 
     @RequestMapping("/test")
     public String hello() {
-        userRepo.findAll().forEach(s->{
+        userRepo.findAllUsers().forEach(s->{
             System.out.println(s.getFirstName());
         });
         return "Hello boot";

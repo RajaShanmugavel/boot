@@ -15,4 +15,6 @@ public interface UserRepo extends CrudRepository<User, Long> {
      * @return
      */
     List<User> findByLastName(String lastName);
+
+    List<User> findAllUsers();
 }
